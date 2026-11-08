@@ -1,3 +1,56 @@
-{"FileVersion":3,"EngineAssociation":"5.4","Category":"Game","Description":"Afterclass: Bloodline",
-"Modules":[{"Name":"Afterclass","Type":"Runtime","LoadingPhase":"Default"},{"Name":"AfterclassEditor","Type":"Editor","LoadingPhase":"Default"}],
-"Plugins":[{"Name":"CommonUI","Enabled":true},{"Name":"EnhancedInput","Enabled":true},{"Name":"GameplayAbilities","Enabled":true},{"Name":"OnlineSubsystemSteam","Enabled":true},{"Name":"OnlineSubsystemNull","Enabled":true},{"Name":"MetaSounds","Enabled":true},{"Name":"ChaosCloth","Enabled":true}]}
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.5",
+	"Category": "Game",
+	"Description": "Afterclass: Bloodline",
+	"Modules": [
+		{
+			"Name": "Afterclass",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"CoreUObject"
+			]
+		},
+		{
+			"Name": "AfterclassEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"CoreUObject"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "CommonUI",
+			"Enabled": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemSteam",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemNull",
+			"Enabled": true
+		},
+		{
+			"Name": "Metasound",
+			"Enabled": true
+		},
+		{
+			"Name": "ChaosCloth",
+			"Enabled": true
+		}
+	]
+}
