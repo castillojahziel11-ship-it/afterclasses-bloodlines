@@ -1,0 +1,103 @@
+Table,Key,SourceString,Translation,Status,Comment
+ST_Characters,Fighter.Akari.Name,Akari,,PENDING,Fighter display name
+ST_Characters,Fighter.Min.Name,Min,,PENDING,Fighter display name
+ST_Characters,Fighter.Yuzuki.Name,Yuzuki,,PENDING,Fighter display name
+ST_Characters,Fighter.Hana.Name,Hana,,PENDING,Fighter display name
+ST_Characters,Fighter.Valerie.Name,Valerie,,PENDING,Fighter display name
+ST_Characters,Fighter.Kanna.Name,Kanna,,PENDING,Fighter display name
+ST_Characters,Fighter.Reina.Name,Reina,,PENDING,Fighter display name
+ST_Characters,Fighter.Rika.Name,Rika,,PENDING,Fighter display name
+ST_Characters,Fighter.EunChae.Name,Eun-chae,,PENDING,Fighter display name
+ST_Characters,Fighter.Nari.Name,Nari,,PENDING,Fighter display name
+ST_Characters,Fighter.Madison.Name,Madison,,PENDING,Fighter display name
+ST_Characters,Fighter.Fighter12.Name,TBD,,PENDING,PLACEHOLDER: 12th base fighter name not decided yet (KNOWN_ISSUES)
+ST_Characters,Fighter.Vesper.Name,Vesper,,PENDING,Fighter display name (Orchid Court)
+ST_Characters,Fighter.Kuroha.Name,Kuroha,,PENDING,Fighter display name (Orchid Court)
+ST_Characters,Fighter.AdelVaux.Name,Adel Vaux,,PENDING,Fighter display name (Orchid Court)
+ST_Characters,Fighter.Sable.Name,Sable,,PENDING,Fighter display name (Orchid Court)
+ST_Characters,Fighter.DexMarrow.Name,Dex Marrow,,PENDING,Boss; playable after Chapter 5
+ST_Characters,Fighter.YN.Name,YN,,PENDING,Secret fighter; unlocked by the SEVERED ending
+ST_Characters,Faction.OrchidCourt,ORCHID COURT,,PENDING,Faction name
+ST_Characters,Unlock.Chapter5Complete,Complete Chapter 5 to unlock.,,PENDING,Unlock hint
+ST_Characters,Unlock.SeveredEnding,Reach the SEVERED ending to unlock.,,PENDING,Unlock hint
+ST_Characters,Passive.Anonymous.Name,ANONYMOUS,,PENDING,YN passive name
+ST_Characters,Passive.Anonymous.Desc,Meter builds 30% faster but drains after 4 seconds without landing a hit.,,PENDING,YN passive description
+ST_Combat,Combat.PerfectDodge,PERFECT DODGE,,PENDING,Combat callout
+ST_Combat,Combat.Parry,PARRY,,PENDING,Combat callout
+ST_Combat,Combat.GuardBreak,GUARD BREAK,,PENDING,Combat callout
+ST_Combat,Combat.Counter,COUNTER,,PENDING,Combat callout
+ST_Combat,Combat.Punish,PUNISH,,PENDING,Combat callout (whiff punish)
+ST_Combat,Combat.Escape,ESCAPE,,PENDING,Combat callout (grab escape)
+ST_Combat,Combat.Unblockable,UNBLOCKABLE,,PENDING,Boss telegraph callout
+ST_Combat,Combat.FinisherReady,FINISHER READY,,PENDING,Combat callout
+ST_Combat,Combat.Finisher,FINISHER,,PENDING,Combat callout
+ST_Combat,Combat.BossPhase,PHASE {0},,PENDING,Boss phase banner; {0} = phase number
+ST_Combat,Move.Light,Light Attack,,PENDING,Move / control name
+ST_Combat,Move.Heavy,Heavy Attack,,PENDING,Move / control name
+ST_Combat,Move.Grab,Grab,,PENDING,Move / control name
+ST_Combat,Move.Special,Special,,PENDING,Move / control name
+ST_Combat,Move.Finisher,Finisher,,PENDING,Move / control name
+ST_Combat,Move.Dodge,Dodge,,PENDING,Move / control name
+ST_Combat,Move.Block,Block / Parry,,PENDING,Move / control name
+ST_Combat,Move.Sprint,Sprint,,PENDING,Move / control name
+ST_Combat,Move.Move,Move,,PENDING,Control name
+ST_Combat,Move.Look,Look,,PENDING,Control name
+ST_UI,Menu.Story,STORY,,PENDING,Main menu item
+ST_UI,Menu.Local,LOCAL,,PENDING,Main menu item (local versus)
+ST_UI,Menu.Arcade,ARCADE,,PENDING,Main menu item
+ST_UI,Menu.LAN,LAN,,PENDING,Main menu item (local network play)
+ST_UI,Menu.Online,ONLINE,,PENDING,Main menu item
+ST_UI,Menu.Collection,COLLECTION,,PENDING,Main menu item (gallery / outfits)
+ST_UI,Menu.Training,TRAINING,,PENDING,Main menu item
+ST_UI,Menu.Settings,SETTINGS,,PENDING,Main menu item
+ST_UI,Menu.Quit,QUIT,,PENDING,Main menu item
+ST_UI,Menu.ComingSoon,COMING SOON,,PENDING,Badge on menu items not yet available
+ST_UI,Title.Tagline,THE CITY NEVER SLEEPS.,,PENDING,Title screen tagline
+ST_UI,Title.PressAnyButton,PRESS ANY BUTTON,,PENDING,Title screen prompt
+ST_UI,Common.Confirm,CONFIRM,,PENDING,Generic button
+ST_UI,Common.Back,BACK,,PENDING,Generic button
+ST_UI,Common.Apply,APPLY,,PENDING,Generic button
+ST_UI,Common.ResetDefaults,RESET TO DEFAULTS,,PENDING,Generic button
+ST_UI,Common.Yes,YES,,PENDING,Generic button
+ST_UI,Common.No,NO,,PENDING,Generic button
+ST_UI,HUD.Health,HEALTH,,PENDING,HUD bar label
+ST_UI,HUD.Stamina,STAMINA,,PENDING,HUD bar label
+ST_UI,HUD.Meter,METER,,PENDING,HUD bar label
+ST_UI,HUD.Round,ROUND {0},,PENDING,HUD round banner; {0} = round number
+ST_UI,HUD.FinalRound,FINAL ROUND,,PENDING,HUD round banner
+ST_UI,HUD.Fight,FIGHT,,PENDING,HUD round start
+ST_UI,HUD.KO,K.O.,,PENDING,HUD round end
+ST_UI,HUD.TimeOver,TIME OVER,,PENDING,HUD round end
+ST_UI,HUD.Time,TIME,,PENDING,HUD timer label
+ST_UI,HUD.Wins,{0} WINS,,PENDING,Result banner; {0} = fighter name
+ST_UI,HUD.Combo,{0} HITS,,PENDING,Combo counter; {0} = hit count
+ST_UI,HUD.Paused,PAUSED,,PENDING,Pause menu title
+ST_UI,HUD.Resume,RESUME,,PENDING,Pause menu item
+ST_UI,HUD.Restart,RESTART,,PENDING,Pause menu item
+ST_UI,HUD.QuitToMenu,QUIT TO MENU,,PENDING,Pause menu item
+ST_UI,Settings.Graphics,GRAPHICS,,PENDING,Settings tab
+ST_UI,Settings.Audio,AUDIO,,PENDING,Settings tab
+ST_UI,Settings.Controls,CONTROLS,,PENDING,Settings tab
+ST_UI,Settings.Gameplay,GAMEPLAY,,PENDING,Settings tab
+ST_UI,Settings.Accessibility,ACCESSIBILITY,,PENDING,Settings tab
+ST_UI,Settings.Language,LANGUAGE,,PENDING,Settings option
+ST_UI,Settings.Resolution,RESOLUTION,,PENDING,Settings option
+ST_UI,Settings.WindowMode,WINDOW MODE,,PENDING,Settings option
+ST_UI,Settings.VSync,V-SYNC,,PENDING,Settings option
+ST_UI,Settings.FrameLimit,FRAME RATE LIMIT,,PENDING,Settings option
+ST_UI,Settings.Upscaling,UPSCALING,,PENDING,Settings option (DLSS / TSR)
+ST_UI,Settings.MasterVolume,MASTER VOLUME,,PENDING,Settings option
+ST_UI,Settings.MusicVolume,MUSIC VOLUME,,PENDING,Settings option
+ST_UI,Settings.SFXVolume,EFFECTS VOLUME,,PENDING,Settings option
+ST_UI,Settings.VoiceVolume,VOICE VOLUME,,PENDING,Settings option
+ST_UI,Settings.Subtitles,SUBTITLES,,PENDING,Settings option
+ST_UI,Settings.CameraSensitivity,CAMERA SENSITIVITY,,PENDING,Settings option
+ST_UI,Settings.InvertY,INVERT Y AXIS,,PENDING,Settings option
+ST_UI,Settings.RemapControls,REMAP CONTROLS,,PENDING,Settings option
+ST_UI,Settings.Difficulty,DIFFICULTY,,PENDING,Settings option
+ST_UI,Settings.Difficulty.Easy,EASY,,PENDING,Difficulty value
+ST_UI,Settings.Difficulty.Normal,NORMAL,,PENDING,Difficulty value
+ST_UI,Settings.Difficulty.Hard,HARD,,PENDING,Difficulty value
+ST_UI,Settings.Difficulty.Nightmare,NIGHTMARE,,PENDING,Difficulty value
+ST_UI,Settings.On,ON,,PENDING,Toggle value
+ST_UI,Settings.Off,OFF,,PENDING,Toggle value

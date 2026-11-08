@@ -2,7 +2,7 @@
 """Best-effort static checks for UE C++ conventions. NOT a substitute for compiling with UBT.
 Checks: generated.h is the last include and matches the file name; GENERATED_BODY in every reflected type;
 API macro on exported classes; Replicated props => GetLifetimeReplicatedProps defined; Server/Client/NetMulticast RPCs
-have _Implementation; balanced braces/parens; .cpp includes its own header first; no FText::FromString under UI/."""
+have _Implementation; balanced braces/parens; .cpp includes its own header first; no FText::FromString( anywhere in Source."""
 import re, sys, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent / "Source"
 errors = []
@@ -41,6 +41,6 @@ for f in sorted(root.rglob("*.[hc]*")):
         incs = re.findall(r'#include\s+"([^"]+)"', re.sub(r'//[^\n]*', '', raw))
         hdr = f.with_suffix(".h")
         if hdr.exists() and (not incs or pathlib.Path(incs[0]).name != hdr.name): err(f, f"first include should be its own header {hdr.name}")
-    if "/UI/" in str(f) and "FText::FromString" in code: err(f, "FText::FromString banned in shipping UI")
+    if re.search(r"FText::FromString\s*\(", code): err(f, "FText::FromString banned (use ACText / string tables)")
 print("\n".join(errors) if errors else "sanity_check: OK (static only; not a UE compile)")
 sys.exit(1 if errors else 0)

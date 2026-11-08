@@ -1,0 +1,24 @@
+Key,SourceString,Comment
+Fighter.Akari.Name,Akari,Fighter display name
+Fighter.Min.Name,Min,Fighter display name
+Fighter.Yuzuki.Name,Yuzuki,Fighter display name
+Fighter.Hana.Name,Hana,Fighter display name
+Fighter.Valerie.Name,Valerie,Fighter display name
+Fighter.Kanna.Name,Kanna,Fighter display name
+Fighter.Reina.Name,Reina,Fighter display name
+Fighter.Rika.Name,Rika,Fighter display name
+Fighter.EunChae.Name,Eun-chae,Fighter display name
+Fighter.Nari.Name,Nari,Fighter display name
+Fighter.Madison.Name,Madison,Fighter display name
+Fighter.Fighter12.Name,TBD,PLACEHOLDER: 12th base fighter name not decided yet (KNOWN_ISSUES)
+Fighter.Vesper.Name,Vesper,Fighter display name (Orchid Court)
+Fighter.Kuroha.Name,Kuroha,Fighter display name (Orchid Court)
+Fighter.AdelVaux.Name,Adel Vaux,Fighter display name (Orchid Court)
+Fighter.Sable.Name,Sable,Fighter display name (Orchid Court)
+Fighter.DexMarrow.Name,Dex Marrow,Boss; playable after Chapter 5
+Fighter.YN.Name,YN,Secret fighter; unlocked by the SEVERED ending
+Faction.OrchidCourt,ORCHID COURT,Faction name
+Unlock.Chapter5Complete,Complete Chapter 5 to unlock.,Unlock hint
+Unlock.SeveredEnding,Reach the SEVERED ending to unlock.,Unlock hint
+Passive.Anonymous.Name,ANONYMOUS,YN passive name
+Passive.Anonymous.Desc,Meter builds 30% faster but drains after 4 seconds without landing a hit.,YN passive description

@@ -1,0 +1,60 @@
+Key,SourceString,Comment
+Menu.Story,STORY,Main menu item
+Menu.Local,LOCAL,Main menu item (local versus)
+Menu.Arcade,ARCADE,Main menu item
+Menu.LAN,LAN,Main menu item (local network play)
+Menu.Online,ONLINE,Main menu item
+Menu.Collection,COLLECTION,Main menu item (gallery / outfits)
+Menu.Training,TRAINING,Main menu item
+Menu.Settings,SETTINGS,Main menu item
+Menu.Quit,QUIT,Main menu item
+Menu.ComingSoon,COMING SOON,Badge on menu items not yet available
+Title.Tagline,THE CITY NEVER SLEEPS.,Title screen tagline
+Title.PressAnyButton,PRESS ANY BUTTON,Title screen prompt
+Common.Confirm,CONFIRM,Generic button
+Common.Back,BACK,Generic button
+Common.Apply,APPLY,Generic button
+Common.ResetDefaults,RESET TO DEFAULTS,Generic button
+Common.Yes,YES,Generic button
+Common.No,NO,Generic button
+HUD.Health,HEALTH,HUD bar label
+HUD.Stamina,STAMINA,HUD bar label
+HUD.Meter,METER,HUD bar label
+HUD.Round,ROUND {0},"HUD round banner; {0} = round number"
+HUD.FinalRound,FINAL ROUND,HUD round banner
+HUD.Fight,FIGHT,HUD round start
+HUD.KO,K.O.,HUD round end
+HUD.TimeOver,TIME OVER,HUD round end
+HUD.Time,TIME,HUD timer label
+HUD.Wins,{0} WINS,"Result banner; {0} = fighter name"
+HUD.Combo,{0} HITS,"Combo counter; {0} = hit count"
+HUD.Paused,PAUSED,Pause menu title
+HUD.Resume,RESUME,Pause menu item
+HUD.Restart,RESTART,Pause menu item
+HUD.QuitToMenu,QUIT TO MENU,Pause menu item
+Settings.Graphics,GRAPHICS,Settings tab
+Settings.Audio,AUDIO,Settings tab
+Settings.Controls,CONTROLS,Settings tab
+Settings.Gameplay,GAMEPLAY,Settings tab
+Settings.Accessibility,ACCESSIBILITY,Settings tab
+Settings.Language,LANGUAGE,Settings option
+Settings.Resolution,RESOLUTION,Settings option
+Settings.WindowMode,WINDOW MODE,Settings option
+Settings.VSync,V-SYNC,Settings option
+Settings.FrameLimit,FRAME RATE LIMIT,Settings option
+Settings.Upscaling,UPSCALING,Settings option (DLSS / TSR)
+Settings.MasterVolume,MASTER VOLUME,Settings option
+Settings.MusicVolume,MUSIC VOLUME,Settings option
+Settings.SFXVolume,EFFECTS VOLUME,Settings option
+Settings.VoiceVolume,VOICE VOLUME,Settings option
+Settings.Subtitles,SUBTITLES,Settings option
+Settings.CameraSensitivity,CAMERA SENSITIVITY,Settings option
+Settings.InvertY,INVERT Y AXIS,Settings option
+Settings.RemapControls,REMAP CONTROLS,Settings option
+Settings.Difficulty,DIFFICULTY,Settings option
+Settings.Difficulty.Easy,EASY,Difficulty value
+Settings.Difficulty.Normal,NORMAL,Difficulty value
+Settings.Difficulty.Hard,HARD,Difficulty value
+Settings.Difficulty.Nightmare,NIGHTMARE,Difficulty value
+Settings.On,ON,Toggle value
+Settings.Off,OFF,Toggle value
