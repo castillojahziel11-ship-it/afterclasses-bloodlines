@@ -47,8 +47,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Afterclass|Combat") void RequestSpecial();
 	UFUNCTION(BlueprintCallable, Category="Afterclass|Combat") void RequestFinisher();
 	UFUNCTION(BlueprintCallable, Category="Afterclass|Combat") void SetSprinting(bool bSprinting);
-	/** Starts an arbitrary move-table row (AI / boss telegraphs). Server only. */
+	/** Starts an arbitrary move-table row (AI). Server only. */
 	bool StartMoveById(FName MoveId);
+	/** Starts a move from a row built at runtime (boss unblockables). Same legality/cost rules. Server only. */
+	bool StartCustomMove(const FACMoveRow& Row);
 
 	/** Order: legality, stamina/meter, lock, cancel window, facing. Server only; clients route through ServerRequestAction. */
 	bool TryStartAction(EACCombatState Next, FName MoveId);
@@ -77,6 +79,10 @@ public:
 	double GetActiveStartTime() const { return ActiveStartTime; }
 	/** Server: frames until the current attack becomes active (>= 0), or -1 if not in startup. */
 	int32 GetFramesUntilActive() const;
+	/** Server: timeline phase of the current attack (Done when not attacking). */
+	AC::EPhase GetMovePhase() const;
+	/** Server: the move row currently executing (valid while IsAttacking()). */
+	const FACMoveRow& GetCurrentMove() const { return CurrentMove; }
 	/** Resolves a move row from the fighter's MoveSet, falling back to ACFrameCore defaults. */
 	bool FindMove(FName MoveId, FACMoveRow& OutRow) const;
 	static bool IsAttackState(EACCombatState S);
@@ -136,6 +142,7 @@ protected:
 private:
 	void RouteAction(EACCombatState Next, FName MoveId);
 	void SetState(EACCombatState NewState);
+	bool CommitMove(const FACMoveRow& Row);
 	void EnterTimedState(EACCombatState NewState, int32 Frames);
 	void SimulateFrame();
 	void StepActionTimeline();

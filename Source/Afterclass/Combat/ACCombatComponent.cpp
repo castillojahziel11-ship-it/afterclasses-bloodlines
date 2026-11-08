@@ -209,6 +209,11 @@ int32 UACCombatComponent::GetFramesUntilActive() const
 	return Remaining >= 0 ? Remaining : -1;
 }
 
+AC::EPhase UACCombatComponent::GetMovePhase() const
+{
+	return (bHasMove && IsAttackState(State)) ? AC::PhaseAt(ToFrameData(CurrentMove), StateFrame) : AC::EPhase::Done;
+}
+
 bool UACCombatComponent::IsFinisherEligible(const AActor* Target) const
 {
 	const UACCombatComponent* T = CombatOf(Target);
@@ -240,48 +245,45 @@ bool UACCombatComponent::TryStartAction(EACCombatState Next, FName MoveId)
 		return true;
 	}
 
-	// 2. Stamina / meter.
-	FACMoveRow Row;
-	const bool bIsMove = IsAttackState(Next);
-	if (bIsMove)
-	{
-		if (!FindMove(MoveId, Row))
-		{
-			UE_LOG(LogAfterclass, Warning, TEXT("Combat: move '%s' not in MoveSet and has no default."), *MoveId.ToString());
-			return false;
-		}
-		if (Stamina < Row.StaminaCost || Meter < Row.MeterCost) return false;
-		if (Row.State == EACCombatState::Finisher)
-		{
-			FaceNearestOpponent();
-			bool bAnyEligible = false;
-			// Finisher requires a facing-assisted target in range that satisfies AC::FinisherEligible.
-			TArray<FOverlapResult> Overlaps;
-			FCollisionQueryParams Params(SCENE_QUERY_STAT(ACFinisher), false, GetOwner());
-			GetWorld()->OverlapMultiByObjectType(Overlaps, GetOwner()->GetActorLocation(), FQuat::Identity,
-				FCollisionObjectQueryParams(ECC_Pawn), FCollisionShape::MakeSphere(FacingAssistRadius), Params);
-			for (const FOverlapResult& O : Overlaps) { bAnyEligible |= IsFinisherEligible(O.GetActor()); }
-			if (!bAnyEligible) return false;
-		}
-	}
-	else if (Next == EACCombatState::Dodging)
-	{
-		if (Stamina < DodgeStaminaCost) return false;
-	}
-
-	// 3. Lock.
-	if (bActionLocked) return false;
-
-	// 4. Cancel window consumed.
-	bCancelWindowOpen = false;
-	CounterWindowFrames = 0;
-
+	// 2-5. Stamina / meter, lock, cancel window, facing, commit.
 	if (Next == EACCombatState::Dodging)
 	{
+		if (Stamina < DodgeStaminaCost || bActionLocked) return false;
+		bCancelWindowOpen = false;
+		CounterWindowFrames = 0;
 		BeginDodge(FVector2D::ZeroVector);
 		return true;
 	}
+	if (!IsAttackState(Next)) return false;
+	FACMoveRow Row;
+	if (!FindMove(MoveId, Row))
+	{
+		UE_LOG(LogAfterclass, Warning, TEXT("Combat: move '%s' not in MoveSet and has no default."), *MoveId.ToString());
+		return false;
+	}
+	return CommitMove(Row);
+}
 
+bool UACCombatComponent::CommitMove(const FACMoveRow& Row)
+{
+	if (!IsAttackState(Row.State)) return false;
+	// 2. Stamina / meter (+ finisher eligibility against a target in assist range).
+	if (Stamina < Row.StaminaCost || Meter < Row.MeterCost) return false;
+	if (Row.State == EACCombatState::Finisher)
+	{
+		bool bAnyEligible = false;
+		TArray<FOverlapResult> Overlaps;
+		FCollisionQueryParams Params(SCENE_QUERY_STAT(ACFinisher), false, GetOwner());
+		GetWorld()->OverlapMultiByObjectType(Overlaps, GetOwner()->GetActorLocation(), FQuat::Identity,
+			FCollisionObjectQueryParams(ECC_Pawn), FCollisionShape::MakeSphere(FacingAssistRadius), Params);
+		for (const FOverlapResult& O : Overlaps) { bAnyEligible |= IsFinisherEligible(O.GetActor()); }
+		if (!bAnyEligible) return false;
+	}
+	// 3. Lock.
+	if (bActionLocked) return false;
+	// 4. Cancel / counter window consumed.
+	bCancelWindowOpen = false;
+	CounterWindowFrames = 0;
 	// 5. Facing correction, then commit.
 	FaceNearestOpponent();
 	SpendStamina(Row.StaminaCost);
@@ -297,6 +299,13 @@ bool UACCombatComponent::TryStartAction(EACCombatState Next, FName MoveId)
 	MulticastPlayMove(Row.MoveId);
 	OnMoveStarted.Broadcast(Row.MoveId, Row.State);
 	return true;
+}
+
+bool UACCombatComponent::StartCustomMove(const FACMoveRow& Row)
+{
+	if (!GetOwner() || !GetOwner()->HasAuthority() || State == EACCombatState::Dead || State == EACCombatState::Grabbed) return false;
+	if (!(IsInFreeState() || bCancelWindowOpen)) return false;
+	return CommitMove(Row);
 }
 
 bool UACCombatComponent::StartMoveById(FName MoveId)

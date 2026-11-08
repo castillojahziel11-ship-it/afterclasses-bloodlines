@@ -1,5 +1,6 @@
 #include "Characters/ACCharacterBase.h"
 #include "Afterclass.h"
+#include "AI/ACEnemyController.h"
 #include "Characters/ACCharacterDataAsset.h"
 #include "Combat/ACCombatComponent.h"
 #include "Combat/ACHitValidation.h"
@@ -46,6 +47,10 @@ AACCharacterBase::AACCharacterBase()
 
 	Combat = CreateDefaultSubobject<UACCombatComponent>(TEXT("Combat"));
 	HitValidation = CreateDefaultSubobject<UACHitValidation>(TEXT("HitValidation"));
+
+	// Unpossessed fighters placed or spawned in a level are driven by the combat AI.
+	AIControllerClass = AACEnemyController::StaticClass();
+	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 }
 
 void AACCharacterBase::OnConstruction(const FTransform& Transform)
