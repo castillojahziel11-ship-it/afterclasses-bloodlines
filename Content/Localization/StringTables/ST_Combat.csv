@@ -1,0 +1,21 @@
+Key,SourceString,Comment
+Combat.PerfectDodge,PERFECT DODGE,Combat callout
+Combat.Parry,PARRY,Combat callout
+Combat.GuardBreak,GUARD BREAK,Combat callout
+Combat.Counter,COUNTER,Combat callout
+Combat.Punish,PUNISH,Combat callout (whiff punish)
+Combat.Escape,ESCAPE,Combat callout (grab escape)
+Combat.Unblockable,UNBLOCKABLE,Boss telegraph callout
+Combat.FinisherReady,FINISHER READY,Combat callout
+Combat.Finisher,FINISHER,Combat callout
+Combat.BossPhase,PHASE {0},"Boss phase banner; {0} = phase number"
+Move.Light,Light Attack,Move / control name
+Move.Heavy,Heavy Attack,Move / control name
+Move.Grab,Grab,Move / control name
+Move.Special,Special,Move / control name
+Move.Finisher,Finisher,Move / control name
+Move.Dodge,Dodge,Move / control name
+Move.Block,Block / Parry,Move / control name
+Move.Sprint,Sprint,Move / control name
+Move.Move,Move,Control name
+Move.Look,Look,Control name
