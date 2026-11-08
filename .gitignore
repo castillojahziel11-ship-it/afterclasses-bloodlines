@@ -1,0 +1,42 @@
+# Unreal Engine generated
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Build/Receipts/
+Packaged/
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.vcxproj*
+*.xcodeproj
+*.xcworkspace
+
+# Compiled artifacts
+*.obj
+*.o
+*.pdb
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+*.ipa
+*.apk
+Tests/t
+Tests/*.out
+
+# OS
+.DS_Store
+Thumbs.db

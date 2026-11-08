@@ -1,0 +1,2 @@
+- feat(combat): engine-independent frame data, scaling, meter, perfect-dodge rules + tests
+- chore: project skeleton, uproject, Build.cs, DefaultEngine.ini, shipping script, map brief (subway)

@@ -1,0 +1,2 @@
+# Union Square Subway Platform — Ch.5 centrepiece (polish priority)
+Purpose: M24 set piece. Sightlines: long platform axis, blocked mid-arena by stalled car. Cover: steel columns, stalled car (2 broken windows). Hazards: track bed (1.2 m drop), lethal only during 45 s train pass, horn first. Lighting: fluorescent fixtures reflected in wet tile — the whole lighting story. Camera rails: platform wide, through-window, track-bed drop. Memorable: hearing the horn and deciding whether to trade or shove.
