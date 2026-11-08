@@ -2,6 +2,7 @@
 #include "Afterclass.h"
 #include "Characters/ACCharacterDataAsset.h"
 #include "Combat/ACCombatComponent.h"
+#include "Combat/ACHitValidation.h"
 #include "Input/ACInputSettings.h"
 
 #include "Animation/AnimInstance.h"
@@ -44,6 +45,7 @@ AACCharacterBase::AACCharacterBase()
 	FollowCamera->bUsePawnControlRotation = false;
 
 	Combat = CreateDefaultSubobject<UACCombatComponent>(TEXT("Combat"));
+	HitValidation = CreateDefaultSubobject<UACHitValidation>(TEXT("HitValidation"));
 }
 
 void AACCharacterBase::OnConstruction(const FTransform& Transform)
@@ -80,6 +82,10 @@ void AACCharacterBase::ApplyCharacterData()
 		{
 			Combat->InitializeVitals(CharacterData->MaxHealth, CharacterData->MaxStamina);
 		}
+	}
+	if (Combat)
+	{
+		Combat->ConfigureFromData(CharacterData); // every machine: montage lookup needs the move table
 	}
 
 	GetCharacterMovement()->MaxWalkSpeed = bIsSprinting ? SprintSpeed : WalkSpeed;

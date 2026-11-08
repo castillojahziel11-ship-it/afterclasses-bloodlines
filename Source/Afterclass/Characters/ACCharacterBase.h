@@ -9,6 +9,7 @@
 class USpringArmComponent;
 class UCameraComponent;
 class UACCombatComponent;
+class UACHitValidation;
 class UACCharacterDataAsset;
 class UInputAction;
 class UEnhancedInputComponent;
@@ -35,6 +36,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components") TObjectPtr<USpringArmComponent> CameraBoom;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components") TObjectPtr<UCameraComponent> FollowCamera;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components") TObjectPtr<UACCombatComponent> Combat;
+	/** Server-side melee sweeps driven by AN_HitWindow_Open / move-table bone chains. */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components") TObjectPtr<UACHitValidation> HitValidation;
 
 	/** All per-fighter differentiation lives in this asset. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Afterclass|Character") TObjectPtr<UACCharacterDataAsset> CharacterData;

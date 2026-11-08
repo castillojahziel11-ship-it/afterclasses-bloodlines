@@ -26,7 +26,7 @@ public:
 	UFUNCTION(BlueprintPure, Category="Afterclass|Build")
 	static FString GetVersionString();
 
-	/** Culture-invariant text for the version watermark (avoids FText::FromString, which is banned in shipping UI). */
+	/** Culture-invariant text for the version watermark (raw-string FText construction is banned in shipping UI). */
 	UFUNCTION(BlueprintPure, Category="Afterclass|Build")
 	static FText GetVersionText();
 };

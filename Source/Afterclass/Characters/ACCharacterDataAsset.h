@@ -5,37 +5,20 @@
 #include "Engine/DataAsset.h"
 #include "Engine/DataTable.h"
 #include "GameplayTagContainer.h"
-#include "Combat/ACCombatComponent.h"
+#include "Combat/ACCombatTypes.h"
 #include "ACCharacterDataAsset.generated.h"
 
 class UTexture2D;
 class USkeletalMesh;
 class UAnimInstance;
-class UAnimMontage;
 class UPhysicsAsset;
-
-/** One row of a fighter's MoveSet DataTable. Frame numbers default to AC::FrameCore values. */
-USTRUCT(BlueprintType)
-struct AFTERCLASS_API FACMoveRow : public FTableRowBase
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move") FName MoveId;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move") EACCombatState State = EACCombatState::LightAttack;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move") TSoftObjectPtr<UAnimMontage> Montage;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move", meta=(ClampMin="1")) int32 StartupFrames = 7;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move", meta=(ClampMin="1")) int32 ActiveFrames = 3;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move", meta=(ClampMin="0")) int32 RecoveryFrames = 11;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move", meta=(ClampMin="0")) float Damage = 5.f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Move", meta=(ClampMin="0")) float StaminaCost = 0.f;
-};
 
 USTRUCT(BlueprintType)
 struct AFTERCLASS_API FACOutfit
 {
 	GENERATED_BODY()
 
-	/** Localized via string table — never FText::FromString. */
+	/** Localized via string table (ST_Characters / ST_UI), never a raw literal. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Outfit") FText DisplayName;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Outfit") TSoftObjectPtr<USkeletalMesh> Mesh;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Outfit", meta=(Categories="Unlock")) FGameplayTag UnlockCondition;
@@ -71,6 +54,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats", meta=(ClampMin="0", Units="cm/s")) float WalkSpeed = 450.f;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats", meta=(ClampMin="0", Units="cm/s")) float SprintSpeed = 700.f;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats", meta=(ClampMin="0", Units="cm")) float DodgeDistance = 350.f;
+	/** YN "Anonymous" passive: meter builds 30% faster, decays after 4 s without landing a hit. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats") bool bAnonymousPassive = false;
+	/** AI preferred engagement distance (written to blackboard PreferredRange). */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats", meta=(ClampMin="50", Units="cm")) float PreferredRange = 150.f;
 	/** Inclusive invulnerability window in frames; defaults mirror AC::DodgeIFrameStart..DodgeIFrameEnd. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats") FIntPoint DodgeIFrames = FIntPoint(3, 13);
 
