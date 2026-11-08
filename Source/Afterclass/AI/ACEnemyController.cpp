@@ -59,7 +59,8 @@ void AACEnemyController::OnPossess(APawn* InPawn)
 
 	UBehaviorTree* BT = BehaviorTreeAsset.LoadSynchronous(); // STUB: async load (KI-006)
 	bUsingBehaviorTree = false;
-	if (BT && BT->BlackboardAsset)
+	// The generator creates BT_Fighter with its blackboard but an EMPTY graph (nodes are a manual step), so also require a root node.
+	if (BT && BT->BlackboardAsset && BT->RootNode)
 	{
 		UBlackboardComponent* BB = nullptr;
 		if (UseBlackboard(BT->BlackboardAsset, BB) && BB)
@@ -79,7 +80,7 @@ void AACEnemyController::OnPossess(APawn* InPawn)
 	}
 	if (!bUsingBehaviorTree)
 	{
-		UE_LOG(LogAfterclass, Warning, TEXT("AI: Behavior Tree '%s' (with BB_Fighter) missing; %s runs evaluator decisions directly. Run Content/Python/generate_afterclass_assets.py."),
+		UE_LOG(LogAfterclass, Warning, TEXT("AI: Behavior Tree '%s' missing, without BB_Fighter, or with an empty graph; %s runs evaluator decisions directly. See Docs/EDITOR_SETUP.md section 3."),
 			*BehaviorTreeAsset.ToSoftObjectPath().ToString(), *GetName());
 	}
 }

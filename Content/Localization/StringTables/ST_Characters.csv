@@ -17,6 +17,7 @@ Fighter.AdelVaux.Name,Adel Vaux,Fighter display name (Orchid Court)
 Fighter.Sable.Name,Sable,Fighter display name (Orchid Court)
 Fighter.DexMarrow.Name,Dex Marrow,Boss; playable after Chapter 5
 Fighter.YN.Name,YN,Secret fighter; unlocked by the SEVERED ending
+Fighter.Placeholder.Name,Placeholder Fighter,Dev-only placeholder fighter (DA_Fighter_Placeholder)
 Faction.OrchidCourt,ORCHID COURT,Faction name
 Unlock.Chapter5Complete,Complete Chapter 5 to unlock.,Unlock hint
 Unlock.SeveredEnding,Reach the SEVERED ending to unlock.,Unlock hint

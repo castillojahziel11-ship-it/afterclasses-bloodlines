@@ -9,4 +9,6 @@ for t in test_framecore test_evaluator; do
   "$OUT/$t"
 done
 python3 Tests/test_move_table.py
+python3 -m py_compile Content/Python/generate_afterclass_assets.py
+python3 Tests/test_generator.py
 echo "run_tests: ALL PASS"

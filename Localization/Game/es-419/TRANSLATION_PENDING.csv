@@ -17,6 +17,7 @@ ST_Characters,Fighter.AdelVaux.Name,Adel Vaux,,PENDING,Fighter display name (Orc
 ST_Characters,Fighter.Sable.Name,Sable,,PENDING,Fighter display name (Orchid Court)
 ST_Characters,Fighter.DexMarrow.Name,Dex Marrow,,PENDING,Boss; playable after Chapter 5
 ST_Characters,Fighter.YN.Name,YN,,PENDING,Secret fighter; unlocked by the SEVERED ending
+ST_Characters,Fighter.Placeholder.Name,Placeholder Fighter,,PENDING,Dev-only placeholder fighter (DA_Fighter_Placeholder)
 ST_Characters,Faction.OrchidCourt,ORCHID COURT,,PENDING,Faction name
 ST_Characters,Unlock.Chapter5Complete,Complete Chapter 5 to unlock.,,PENDING,Unlock hint
 ST_Characters,Unlock.SeveredEnding,Reach the SEVERED ending to unlock.,,PENDING,Unlock hint
