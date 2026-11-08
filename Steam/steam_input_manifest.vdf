@@ -1,0 +1,30 @@
+// PLACEHOLDER — NOT FINAL. Steam Input manifest for Afterclass: Bloodline.
+// Replace <APPID> with the real Steam App ID and author the per-controller configurations
+// (Xbox / PlayStation / Switch Pro / Steam Deck) in the Steamworks partner site, then export them here.
+// The game itself consumes standard gamepad keys through Enhanced Input; Steam Input maps physical controllers onto them.
+"Game"
+{
+	"version"		"1"
+	"workshop_id"	"0"
+	"appid"			"<APPID>"
+	"title"			"Afterclass: Bloodline"
+	"configurations"
+	{
+		"controller_xboxone"
+		{
+			"0"	{ "path" "controller_xboxone_default.vdf" }
+		}
+		"controller_ps5"
+		{
+			"0"	{ "path" "controller_ps5_default.vdf" }
+		}
+		"controller_switch_pro"
+		{
+			"0"	{ "path" "controller_switch_pro_default.vdf" }
+		}
+		"controller_neptune"
+		{
+			"0"	{ "path" "controller_neptune_default.vdf" }
+		}
+	}
+}
